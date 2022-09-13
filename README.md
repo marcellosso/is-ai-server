@@ -9,7 +9,7 @@
 - [ ] Allow unauthorized routes: 'get'
 - [ ] Improve error handling
 
-#####Semi-Priorities
+##### Mid Priorities
 - [ ] Add and improve logging
   - Study wether to use Morgan or other logging lib
 - [ ] Allow ADMIN to update image on certain level
