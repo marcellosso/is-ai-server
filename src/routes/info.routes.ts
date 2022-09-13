@@ -1,19 +1,19 @@
 import { Router } from 'express';
-import { createLevelHandler } from '../controllers/info.controllers';
+import { createLevelHandler, deleteLevelHandler, getLevelsHandler, updateLevelHandler } from '../controllers/info.controllers';
 import upload from '../middlewares/uploadMiddleware';
 
 const router = Router();
 
 // Get all levels
-router.get('/');
+router.get('/', getLevelsHandler);
 
 // Create a new level
 router.post('/', upload.single('image'), createLevelHandler)
 
 // Update a level
-router.put('/:id')
+router.put('/:id', updateLevelHandler)
 
 // Delete a level
-router.delete('/:id')
+router.delete('/:id', deleteLevelHandler);
 
 export default router;
