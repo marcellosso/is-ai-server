@@ -1,8 +1,16 @@
 import app from './app';
-import { SERVER_PORT } from './config';
+import { NODE_ENV, SERVER_PORT } from './config';
 import { connectDatabase } from './database';
 
-connectDatabase();
-app.listen(SERVER_PORT, () => {
-  console.log(`Server running on port ${SERVER_PORT}`);
-})
+const main = () => {
+  connectDatabase();
+  // await createAdminUser(); // TODO
+  const serverPort = app.get("port");
+  
+  app.listen(serverPort, () => {
+    console.log(`Server running on port ${serverPort}`);
+    console.log(`Environment: ${NODE_ENV}`);
+  });
+}
+
+main();

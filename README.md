@@ -28,3 +28,5 @@
 - [X] Add route to get all *levels* at once
 - [X] Add route to delete an *level*
 - [X] Add route to update an *level*
+- [X] Create .env local file
+- [X] Add and Setup Cors
