@@ -1,13 +1,8 @@
 ## Todo
 
 ##### Priorities
-
-- [ ] Decide how to send image to client
-  - [ ] Send image data through bytes with formdata ([Related Stackoverflow Question](https://stackoverflow.com/questions/50880939/creating-a-nodejs-server-that-send-response-with-multipart-form-data/50883981#50883981))
-  - [ ] Send image name and pull it through api static file (Current solution)
-- [ ] Authorization handling for admin to add/delete/update *levels*
-- [ ] Allow unauthorized routes: 'get'
-- [ ] Improve error handling
+- [ ] Handle proper development (local) and production enviromnents
+- [ ] Prepare for production release
 
 ##### Mid Priorities
 - [ ] Add and improve logging
@@ -15,8 +10,10 @@
 - [ ] Allow ADMIN to update image on certain level
 
 ## In Progress
-- [ ] Add admin model and routes
-- [ ] Add authentication
+- [ ] Decide how to send image to client
+  - [ ] Send image data through bytes with formdata ([Related Stackoverflow Question](https://stackoverflow.com/questions/50880939/creating-a-nodejs-server-that-send-response-with-multipart-form-data/50883981#50883981))
+  - [ ] Send image name and pull it through api static file (Current solution)
+- [ ] Improve error handling
 
 ## Done ✓
 
@@ -30,3 +27,7 @@
 - [X] Add route to update an *level*
 - [X] Create .env local file
 - [X] Add and Setup Cors
+- [X] Add admin model and routes
+- [X] Add authentication
+- [X] Authorization handling for admin to add/delete/update *levels*
+- [X] Allow unauthorized routes: 'get'

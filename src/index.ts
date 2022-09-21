@@ -1,10 +1,11 @@
 import app from './app';
 import { NODE_ENV, SERVER_PORT } from './config';
 import { connectDatabase } from './database';
+import { createAdminUser } from './helpers/admin';
 
-const main = () => {
+const main = async () => {
   connectDatabase();
-  // await createAdminUser(); // TODO
+  await createAdminUser();
   const serverPort = app.get("port");
   
   app.listen(serverPort, () => {

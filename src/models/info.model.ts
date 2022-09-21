@@ -1,5 +1,5 @@
 import { getModelForClass, modelOptions, prop } from "@typegoose/typegoose";
-import { ImageType } from "../schemas/InfoSchema";
+import { IMAGE_TYPE_ENUM } from "../schemas/InfoSchema";
 
 @modelOptions({
   schemaOptions: {
@@ -16,8 +16,8 @@ class Info {
   @prop()
   source_uri: string;
 
-  @prop({ required: true, enum: ImageType })
-  type: ImageType;
+  @prop({ required: true, enum: IMAGE_TYPE_ENUM })
+  type: IMAGE_TYPE_ENUM;
 }
 
 export default getModelForClass(Info);

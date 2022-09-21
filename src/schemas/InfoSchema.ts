@@ -1,4 +1,4 @@
-export enum ImageType {
+export enum IMAGE_TYPE_ENUM {
   AI = 'ai',
   HUMAN = 'human'
 }
@@ -10,5 +10,5 @@ export type InfoSchema = {
 
   source_uri: string;
 
-  type: ImageType;
+  type: IMAGE_TYPE_ENUM;
 }
