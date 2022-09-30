@@ -19,10 +19,10 @@ class Info {
   @prop({ required: true, enum: IMAGE_TYPE_ENUM })
   type: IMAGE_TYPE_ENUM;
 
-  @prop()
+  @prop({ default: 0 })
   answered_ai: number;
 
-  @prop()
+  @prop({ default: 0 })
   answered_human: number;
 }
 

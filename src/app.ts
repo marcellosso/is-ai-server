@@ -12,10 +12,10 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, 'public/img')));
 
-app.use(errorHandler);
-
 // Routes
 app.use('/info', InfoRoutes);
 app.use('/auth', AuthRoutes);
+
+app.use(errorHandler);
 
 export default app;

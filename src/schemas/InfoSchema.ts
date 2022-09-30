@@ -12,3 +12,8 @@ export type InfoSchema = {
 
   type: IMAGE_TYPE_ENUM;
 }
+
+export type PreviousAnswersSchema = {
+  levelId: string;
+  answer: IMAGE_TYPE_ENUM;
+}

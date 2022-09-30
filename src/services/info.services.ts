@@ -1,5 +1,5 @@
 import Info from "../models/info.model";
-import { InfoSchema } from "../schemas/InfoSchema";
+import { IMAGE_TYPE_ENUM, InfoSchema, PreviousAnswersSchema } from "../schemas/InfoSchema";
 
 export const createLevel = async (levelInfo: InfoSchema) => {
   try {
@@ -27,6 +27,27 @@ export const updateLevel = async (id: string, level: Partial<InfoSchema>) => {
       returnOriginal: false
     });
     return updatedLevel;
+  } catch (err) {
+    throw(err);
+  }
+}
+
+export const updateLevelsAnswers = async (answers: PreviousAnswersSchema[]) => {
+  try {
+    answers.forEach(async (answer) => {
+      const foundLevel = await Info.findById(answer.levelId);
+
+      let answeredAICount = foundLevel?.answered_ai as number;
+      let answeredHumanCount = foundLevel?.answered_human as number;
+
+      if (answer.answer == IMAGE_TYPE_ENUM.AI) answeredAICount += 1;
+      else if (answer.answer == IMAGE_TYPE_ENUM.HUMAN) answeredHumanCount += 1;
+
+      await foundLevel?.updateOne({
+        answered_ai: answeredAICount,
+        answered_human: answeredHumanCount
+      })
+    })
   } catch (err) {
     throw(err);
   }

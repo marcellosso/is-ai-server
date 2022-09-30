@@ -2,10 +2,6 @@
 
 ##### Priorities
 
-- [ ] Handle proper development (local) and production enviromnents
-- [ ] Prepare for production release
-- [ ] Add route for user to update level answered stats (group update or one by one?)
-
 ##### Mid Priorities
 
 - [ ] Add and improve logging
@@ -13,8 +9,8 @@
 - [ ] Allow ADMIN to update image on certain level
 
 ## In Progress
-
-- [ ] Improve error handling
+- [ ] Handle proper development (local) and production enviromnents
+- [ ] Prepare for production release
 
 ## Done ✓
 
@@ -34,3 +30,5 @@
 - [x] Allow unauthorized routes: 'get'- [x] Decide how to send image to client
   - [-] Send image data through bytes with formdata ([Related Stackoverflow Question](https://stackoverflow.com/questions/50880939/creating-a-nodejs-server-that-send-response-with-multipart-form-data/50883981#50883981))
   - [x] Send image name and pull it through api static file (Current solution)
+- [x] Improve error handling
+- [x] Add route for user to update level answered stats

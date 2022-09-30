@@ -9,7 +9,7 @@ export const authorize = () => {
     
     (req: any, res: any, next: any) => {
       if (req.auth.role != USER_ROLE_ENUM.ADMIN) {
-        return res.status(401).json({ message: 'Unauthorized' })
+        return next('Unauthorized')
       }
   
       next();
