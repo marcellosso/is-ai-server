@@ -9,7 +9,7 @@ export const corsAllOptions = {
       callback(new Error('Not allowed by CORS'));
     }
   },
-  methods: 'GET',
+  methods: ['GET', 'POST', 'OPTIONS'],
 }
 
 export const corsAdminOptions = {
@@ -20,5 +20,5 @@ export const corsAdminOptions = {
       callback(new Error('Not allowed by CORS'));
     }
   },
-  methods: ['GET', 'PUT', 'POST', 'DELETE']
+  methods: ['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS']
 }

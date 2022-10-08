@@ -5,7 +5,6 @@ import upload from '../middlewares/uploadMiddleware';
 import { corsAdminOptions, corsAllOptions } from '../cors';
 import { createLevelHandler, deleteLevelHandler, getLevelsHandler, updateLevelHandler, updateLevelsAnswersHandler } from '../controllers/info.controllers';
 import { authorize } from '../middlewares/authorizeMiddleware';
-import { errorHandler } from '../middlewares/errorHandlerMiddleware';
 
 const router = Router();
 
@@ -20,7 +19,6 @@ router.post('/answers', cors(corsAllOptions), updateLevelsAnswersHandler)
 
 // Update a level
 router.put('/:id', [cors(corsAdminOptions), authorize() as any], updateLevelHandler)
-
 
 // Delete a level
 router.delete('/:id', [cors(corsAdminOptions), authorize() as any], deleteLevelHandler);
