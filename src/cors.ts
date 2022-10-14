@@ -4,7 +4,7 @@ import { ALLOWED_ORIGINS, NODE_ENV } from "./config"
 export const corsAllOptions = {
   origin: (origin: any, callback: any) => {
     console.log('Incoming Origin - ', origin);
-    if (ALLOWED_ORIGINS.indexOf(origin) !== -1 || (!origin && NODE_ENV === 'local')) {
+    if (ALLOWED_ORIGINS.indexOf(origin) !== -1 || !origin) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
