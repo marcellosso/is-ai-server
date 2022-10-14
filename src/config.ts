@@ -2,7 +2,7 @@ import { config } from 'dotenv';
 
 config();
 
-export const SERVER_PORT = process.env.SERVER_PORT as string;
+export const SERVER_PORT = process.env.PORT as string;
 export const MONGODB_URI = process.env.MONGODB_URI as string;
 export const ALLOWED_ORIGINS = process.env.ALLOWED_ORIGINS?.split(",") || [""];
 export const NODE_ENV = process.env.NODE_ENV as string;
