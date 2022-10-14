@@ -12,3 +12,9 @@ export const authenticateHandler = async (req: Request, res: Response, next: Nex
     next(err);
   }
 }
+
+export const validateUserHandler = async (req: any, res: Response) => {
+  res.send({
+    user: req?.auth?.email
+  })
+}
