@@ -4,13 +4,11 @@
 
 ##### Mid Priorities
 
-- [ ] Add and improve logging
-  - Study wether to use Morgan or other logging lib
 - [ ] Allow ADMIN to update image on certain level
 
 ## In Progress
-- [ ] Handle proper development (local) and production enviromnents
-- [ ] Prepare for production release
+- [ ] Add and improve logging
+  - Study wether to use Morgan or other logging lib
 
 ## Done ✓
 
@@ -32,3 +30,5 @@
   - [x] Send image name and pull it through api static file (Current solution)
 - [x] Improve error handling
 - [x] Add route for user to update level answered stats
+- [x] Handle proper development (local) and production enviromnents
+- [x] Prepare for production release
