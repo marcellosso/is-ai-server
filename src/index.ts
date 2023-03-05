@@ -1,5 +1,5 @@
-import app from './app';
 import { NODE_ENV, SERVER_PORT } from './config';
+import app from './app';
 import { connectDatabase } from './database';
 import { createAdminUser } from './helpers/admin';
 
