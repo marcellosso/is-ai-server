@@ -2,6 +2,7 @@ node_modules/
 .elasticbeanstalk/
 
 .env
+build
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
