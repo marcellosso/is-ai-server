@@ -4,13 +4,9 @@ export enum IMAGE_TYPE_ENUM {
 }
 
 export type InfoSchema = {
-  imageName: string;
-
-  description: string;
-
-  source_uri: string;
-
   type: IMAGE_TYPE_ENUM;
+
+  image_uri: string;
 }
 
 export type PreviousAnswersSchema = {

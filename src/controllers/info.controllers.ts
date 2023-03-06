@@ -3,10 +3,9 @@ import { createLevel, deleteLevel, getLevels, updateLevel, updateLevelsAnswers }
 
 export const createLevelHandler = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { description, source_uri, type } = req.body;
-    const imageName = req.file?.filename as string;
-   
-    const createdLevel = await createLevel({ imageName, description, source_uri, type });
+    const { type } = req.body;
+    
+    const createdLevel = await createLevel({ type, image_uri: (req.file as any).location });
     res.json(createdLevel);
   } catch (err) {
     next(err);

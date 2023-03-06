@@ -7,14 +7,8 @@ import { IMAGE_TYPE_ENUM } from "../schemas/InfoSchema";
   },
 })
 class Info {
-  @prop({ required: true, unique: true })
-  imageName: string;
-
   @prop()
-  description: string;
-
-  @prop()
-  source_uri: string;
+  image_uri: string;
 
   @prop({ required: true, enum: IMAGE_TYPE_ENUM })
   type: IMAGE_TYPE_ENUM;

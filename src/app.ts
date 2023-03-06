@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public/img')));
 
 app.use(cors(corsAllOptions));
-app.use(morgan('common'));
+app.use(morgan('tiny'));
 
 // Routes
 app.use('/info', InfoRoutes);
