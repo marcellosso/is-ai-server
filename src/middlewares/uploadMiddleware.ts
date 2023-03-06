@@ -5,18 +5,6 @@ import S3 from "../helpers/s3";
 
 const ALLOWED_IMAGE_TYPES = ["image/jpeg", "image/jpg", "image/png"];
 
-// const storage = multer.diskStorage({
-//   destination: (req, file, cb) => {
-//       cb(null, 'src/public/img')
-//   },
-//   filename: (req, file, cb) => {
-//     // const splittedName = file.originalname.split('.');
-//     // const fileExtension = splittedName[splittedName.length - 1];
-//     // cb(null, `${file.filename}.${fileExtension}`);
-//     cb(null, file.originalname);
-//   }
-// })
-
 const upload = multer({
   limits: {
     fileSize: 4 * 1024 * 1024,
