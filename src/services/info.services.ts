@@ -12,6 +12,17 @@ export const createLevel = async (levelInfo: InfoSchema) => {
   }
 };
 
+export const createLevelBulk = async (levelsInfo: InfoSchema[]) => {
+  try {
+    const levels = levelsInfo.map((level) => new Info(level));
+    const savedLevels = await Info.bulkSave(levels);
+    
+    return savedLevels;
+  } catch (err) {
+    throw(err);
+  }
+};
+
 export const getLevels = async () => {
   try {
     const levels = await Info.find();

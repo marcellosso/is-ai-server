@@ -15,10 +15,12 @@ const upload = multer({
     acl: 'public-read',
     cacheControl: 'max-age=31536000',
     key: function (req, file, cb) {
+      console.log(file)
         cb(null, `${Date.now()}-${file.originalname}`); //use Date.now() for unique file keys
     }
   }),
   fileFilter: (req, file, cb) => {
+    console.log(file)
     if (ALLOWED_IMAGE_TYPES.includes(file.mimetype)) {
       cb(null, true);
     } else {

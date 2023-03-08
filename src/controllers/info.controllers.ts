@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express'
-import { createLevel, deleteLevel, getLevels, updateLevel, updateLevelsAnswers } from '../services/info.services';
+import { createLevel, createLevelBulk, deleteLevel, getLevels, updateLevel, updateLevelsAnswers } from '../services/info.services';
 
 export const createLevelHandler = async (req: Request, res: Response, next: NextFunction) => {
   try {
@@ -7,6 +7,18 @@ export const createLevelHandler = async (req: Request, res: Response, next: Next
     
     const createdLevel = await createLevel({ type, image_uri: (req.file as any).location });
     res.json(createdLevel);
+  } catch (err) {
+    next(err);
+  }
+}
+
+export const createBulkLevelHandler = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const { type } = req.body;
+    const files = req.files as any[]
+    
+    const createdLevels = await createLevelBulk(files?.map((file) => ({ type, image_uri: file.location })));
+    res.json(createdLevels);
   } catch (err) {
     next(err);
   }
