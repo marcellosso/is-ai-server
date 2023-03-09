@@ -6,9 +6,6 @@ import S3 from "../helpers/s3";
 const ALLOWED_IMAGE_TYPES = ["image/jpeg", "image/jpg", "image/png"];
 
 const upload = multer({
-  limits: {
-    fileSize: 4 * 1024 * 1024,
-  },
   storage: multerS3({
     s3: S3 as any,
     bucket: AWS_BUCKET_NAME,
